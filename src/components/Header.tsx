@@ -1,4 +1,3 @@
-import moonMark from '../assets/reflua-mark.svg';
 import sunIcon from '../assets/sun.svg';
 import './header.css';
 
@@ -19,7 +18,7 @@ export default function Header({ darkMode, activePath, onToggleTheme }: HeaderPr
     <header className="site-header">
       <div className="header-inner">
         <a className="brand brand-large" href="/" aria-label="Reflua 홈">
-          <img className={darkMode ? 'brand-mark is-dark' : 'brand-mark'} src={moonMark} width="35" height="35" alt="" />
+          <span className="brand-mark" aria-hidden="true" />
           <span>Reflua</span>
         </a>
 

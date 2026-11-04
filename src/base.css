@@ -51,7 +51,7 @@ button {
   flex-direction: column;
   color: var(--text-primary);
   background: var(--bg-page);
-  transition: color 100ms ease-out, background-color 100ms ease-out;
+  transition: color 80ms ease-out, background-color 80ms ease-out;
 }
 
 .site-shell[data-theme='dark'] {
