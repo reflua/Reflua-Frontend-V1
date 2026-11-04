@@ -1,0 +1,148 @@
+.site-footer {
+  width: 100%;
+  border-top: 1px solid var(--border-default);
+  background: var(--bg-subtle);
+}
+
+.footer-inner {
+  padding-block: 64px 40px;
+}
+
+.footer-top {
+  display: flex;
+  min-height: 120px;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 48px;
+}
+
+.footer-brand-block {
+  width: 207px;
+  flex: 0 0 auto;
+}
+
+.brand-small {
+  gap: 8px;
+}
+
+.brand-small span {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.brand-description {
+  margin: 16px 0 0;
+  color: var(--text-tertiary);
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.footer-link-columns {
+  display: flex;
+  align-items: flex-start;
+  gap: 80px;
+}
+
+.footer-link-column {
+  display: flex;
+  min-width: max-content;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.footer-link-column h2 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: inherit;
+  font-weight: 500;
+}
+
+.footer-link-column a {
+  color: var(--text-secondary);
+}
+
+.footer-link.is-disabled {
+  color: var(--text-tertiary);
+  cursor: default;
+}
+
+.link-status {
+  font-size: 11px;
+}
+
+.footer-link-column a:hover,
+.github-link:hover {
+  color: var(--text-brand);
+}
+
+.footer-bottom {
+  display: flex;
+  min-height: 46px;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-default);
+}
+
+.footer-bottom p,
+.github-link {
+  margin: 0;
+  color: var(--text-tertiary);
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.github-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 760px) {
+  .footer-inner {
+    padding-block: 40px 28px;
+  }
+
+  .footer-top {
+    flex-direction: column;
+    gap: 36px;
+  }
+
+  .footer-link-columns {
+    width: 100%;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .footer-bottom {
+    align-items: flex-start;
+    gap: 16px;
+    margin-top: 36px;
+  }
+
+  .footer-bottom p,
+  .github-link {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 420px) {
+  .footer-link-columns {
+    gap: 12px;
+  }
+
+  .footer-link-column {
+    min-width: 0;
+    font-size: 12px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+  }
+}
