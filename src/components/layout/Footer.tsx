@@ -10,7 +10,7 @@ const columns = [
   },
   {
     title: '프로젝트',
-    links: [{ label: 'Reflua 웹', href: '/' }],
+    links: [{ label: 'Reflua', href: '/' }],
   },
   {
     title: '커뮤니티',
