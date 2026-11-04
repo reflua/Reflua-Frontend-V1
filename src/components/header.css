@@ -73,6 +73,11 @@
   background: var(--bg-brand-subtle);
 }
 
+.nav-link.is-disabled {
+  color: var(--text-tertiary);
+  cursor: default;
+}
+
 .header-actions {
   display: flex;
   justify-content: flex-end;
@@ -101,6 +106,10 @@
   transition: transform 180ms ease;
 }
 
+.theme-knob svg {
+  color: var(--text-brand);
+}
+
 .theme-toggle.is-dark .theme-knob {
   transform: translateX(24px);
 }
@@ -120,7 +129,7 @@
 
   .header-inner {
     grid-template-columns: 1fr auto;
-    grid-template-rows: 64px 52px;
+    grid-template-rows: 64px minmax(0, 1fr);
   }
 
   .brand-large {
