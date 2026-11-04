@@ -19,7 +19,7 @@
   --border-default: #e5e5e5;
 
   /* 라이트/다크 전환 속도는 여기 한 곳에서만 조절합니다. */
-  --theme-duration: 80ms;
+  --theme-duration: 200ms;
   --theme-ease: ease-out;
 }
 
