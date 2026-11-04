@@ -6,17 +6,17 @@ const columns = [
   {
     title: '서비스',
     links: [
-      { label: '소개', href: '/#about' },
-      { label: '문서', href: '/docs' },
-      { label: '팀원', href: '/team' },
+      { label: '소개', href: '/' },
+      { label: '문서', href: null },
+      { label: '팀원', href: null },
     ],
   },
   {
     title: '프로젝트',
     links: [
-      { label: '봇 앱', href: '#bot-app' },
+      { label: '봇 앱', href: null },
       { label: 'Reflua 웹', href: '/' },
-      { label: 'Reflua API', href: '/docs' },
+      { label: 'Reflua API', href: null },
     ],
   },
   {
@@ -48,11 +48,17 @@ export default function Footer() {
             {columns.map((column) => (
               <div className="footer-link-column" key={column.title}>
                 <h2>{column.title}</h2>
-                {column.links.map((link) => (
-                  <a href={link.href} key={link.label}>
-                    {link.label}
-                  </a>
-                ))}
+                {column.links.map((link) =>
+                  link.href ? (
+                    <a href={link.href} key={link.label}>
+                      {link.label}
+                    </a>
+                  ) : (
+                    <span className="footer-link is-disabled" key={link.label} aria-disabled="true">
+                      {link.label} <span className="link-status">· 준비 중</span>
+                    </span>
+                  ),
+                )}
               </div>
             ))}
           </div>
