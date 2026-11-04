@@ -51,7 +51,7 @@ button {
   flex-direction: column;
   color: var(--text-primary);
   background: var(--bg-page);
-  transition: color 180ms ease, background-color 180ms ease;
+  transition: color 100ms ease-out, background-color 100ms ease-out;
 }
 
 .site-shell[data-theme='dark'] {
@@ -70,4 +70,11 @@ button {
 
 .page-content {
   flex: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-shell,
+  .theme-knob {
+    transition: none;
+  }
 }

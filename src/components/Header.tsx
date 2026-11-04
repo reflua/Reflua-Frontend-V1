@@ -18,7 +18,7 @@ export default function Header({ darkMode, onToggleTheme }: HeaderProps) {
     <header className="site-header">
       <div className="header-inner">
         <a className="brand brand-large" href="/" aria-label="Reflua 홈">
-          <img src={moonMark} width="35" height="35" alt="" />
+          <img className={darkMode ? 'brand-mark is-dark' : 'brand-mark'} src={moonMark} width="35" height="35" alt="" />
           <span>Reflua</span>
         </a>
 
