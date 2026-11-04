@@ -1,4 +1,6 @@
-import sunIcon from '../assets/sun.svg';
+import sunIcon from '../../assets/icons/sun.svg';
+import { navigation } from '../../config/navigation';
+import { Link } from '../../lib/router';
 import './header.css';
 
 type HeaderProps = {
@@ -7,34 +9,28 @@ type HeaderProps = {
   onToggleTheme: () => void;
 };
 
-const navigation = [
-  { label: '소개', href: '/' },
-  { label: '문서', href: '/docs' },
-  { label: '팀원', href: '/team' },
-];
-
 export default function Header({ darkMode, activePath, onToggleTheme }: HeaderProps) {
   return (
     <header className="site-header">
       <div className="header-inner">
-        <a className="brand brand-large" href="/" aria-label="Reflua 홈">
+        <Link className="brand brand-large" href="/" aria-label="Reflua 홈">
           <span className="brand-mark" aria-hidden="true" />
           <span>Reflua</span>
-        </a>
+        </Link>
 
         <nav className="primary-nav" aria-label="주 메뉴">
           {navigation.map(({ label, href }) => {
             const active = activePath === href;
 
             return (
-              <a
+              <Link
                 className={`nav-link${active ? ' is-active' : ''}`}
                 href={href}
                 key={label}
                 aria-current={active ? 'page' : undefined}
               >
                 {label}
-              </a>
+              </Link>
             );
           })}
         </nav>

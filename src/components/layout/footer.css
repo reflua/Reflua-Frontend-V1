@@ -25,7 +25,15 @@
   gap: 8px;
 }
 
-.brand-small span {
+.brand-small .brand-mark {
+  width: 24px;
+  height: 24px;
+  flex-basis: 24px;
+  -webkit-mask-image: url('../../assets/logo/reflua-mark-small.svg');
+  mask-image: url('../../assets/logo/reflua-mark-small.svg');
+}
+
+.brand-small span:not(.brand-mark) {
   font-family: 'Press Start 2P', monospace;
   font-size: 14px;
   line-height: 18px;
@@ -71,6 +79,7 @@
 }
 
 .footer-link-column a:hover,
+.site-shell[data-theme='dark'] .footer-link-column a:hover,
 .github-link:hover {
   color: var(--text-brand);
 }
@@ -98,6 +107,16 @@
   align-items: center;
   gap: 8px;
   color: var(--text-secondary);
+}
+
+.github-icon {
+  display: block;
+  width: 16px;
+  height: 16px;
+  flex: 0 0 16px;
+  background-color: currentColor;
+  -webkit-mask: url('../../assets/icons/github.svg') center / contain no-repeat;
+  mask: url('../../assets/icons/github.svg') center / contain no-repeat;
 }
 
 @media (max-width: 760px) {

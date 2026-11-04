@@ -1,23 +1,26 @@
-import { useState } from 'react';
-import Footer from './components/Footer';
-import Header from './components/Header';
+import Footer from './components/layout/Footer';
+import Header from './components/layout/Header';
+import { useTheme } from './hooks/useTheme';
+import { usePathname } from './lib/router';
 import DocsPage from './pages/DocsPage';
+import HomePage from './pages/HomePage';
 import TeamPage from './pages/TeamPage';
 
-export default function App() {
-  const [darkMode, setDarkMode] = useState(false);
-  const activePath = window.location.pathname.replace(/\/$/, '') || '/';
+const pages: Record<string, () => React.JSX.Element> = {
+  '/': HomePage,
+  '/docs': DocsPage,
+  '/team': TeamPage,
+};
 
-  const page = activePath === '/docs'
-    ? <DocsPage />
-    : activePath === '/team'
-      ? <TeamPage />
-      : <main className="page-content" aria-label="페이지 콘텐츠" />;
+export default function App() {
+  const { darkMode, toggleTheme } = useTheme();
+  const activePath = usePathname();
+  const Page = pages[activePath] ?? HomePage;
 
   return (
     <div className="site-shell" data-theme={darkMode ? 'dark' : 'light'}>
-      <Header darkMode={darkMode} activePath={activePath} onToggleTheme={() => setDarkMode((value) => !value)} />
-      {page}
+      <Header darkMode={darkMode} activePath={activePath} onToggleTheme={toggleTheme} />
+      <Page />
       <Footer />
     </div>
   );
