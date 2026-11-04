@@ -37,8 +37,14 @@
   gap: 12px;
 }
 
-.brand-mark.is-dark {
-  filter: brightness(0) saturate(100%) invert(82%) sepia(74%) saturate(560%) hue-rotate(2deg) brightness(104%) contrast(102%);
+.brand-mark {
+  display: block;
+  width: 35px;
+  height: 35px;
+  flex: 0 0 35px;
+  background-color: var(--text-brand);
+  -webkit-mask: url('../assets/reflua-mark.svg') center / contain no-repeat;
+  mask: url('../assets/reflua-mark.svg') center / contain no-repeat;
 }
 
 .brand-large span {
@@ -102,7 +108,7 @@
   place-items: center;
   border-radius: 50%;
   background: var(--bg-surface);
-  transition: transform 100ms ease-out;
+  transition: transform 80ms ease-out;
 }
 
 .theme-knob svg {
@@ -135,9 +141,10 @@
     gap: 8px;
   }
 
-  .brand-large img {
+  .brand-large .brand-mark {
     width: 30px;
     height: 30px;
+    flex-basis: 30px;
   }
 
   .brand-large span {
