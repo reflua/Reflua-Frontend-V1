@@ -7,8 +7,8 @@ const columns = [
     title: '서비스',
     links: [
       { label: '소개', href: '/' },
-      { label: '문서', href: null },
-      { label: '팀원', href: null },
+      { label: '문서', href: '/docs' },
+      { label: '팀원', href: '/team' },
     ],
   },
   {

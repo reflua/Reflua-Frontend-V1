@@ -77,11 +77,6 @@
   background: var(--bg-brand-subtle);
 }
 
-.nav-link.is-disabled {
-  color: var(--text-tertiary);
-  cursor: default;
-}
-
 .header-actions {
   display: flex;
   justify-content: flex-end;

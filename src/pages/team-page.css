@@ -1,0 +1,134 @@
+.team-page {
+  padding: 64px 24px 56px;
+}
+
+.team-container {
+  width: min(100%, 1200px);
+  margin-inline: auto;
+}
+
+.team-heading {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  margin-bottom: 48px;
+}
+
+.team-logo {
+  display: block;
+  flex: 0 0 96px;
+}
+
+.team-copy h1 {
+  margin: 4px 0 0;
+  font-size: 48px;
+  line-height: 68px;
+}
+
+.team-copy p {
+  margin-top: 4px;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.member-card {
+  display: flex;
+  min-height: 275px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 24px;
+  border: 1px solid var(--border-default);
+  border-radius: 16px;
+  background: var(--bg-surface);
+}
+
+.member-avatar {
+  display: grid;
+  width: 96px;
+  height: 96px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--bg-brand-subtle);
+}
+
+.member-card h2 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 20px;
+  line-height: 28px;
+}
+
+.member-github {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-secondary);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.member-github img {
+  display: block;
+  flex: 0 0 16px;
+}
+
+.member-roles {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.member-roles-label {
+  color: var(--text-tertiary);
+  font-size: 12px;
+}
+
+.role-chip {
+  display: inline-flex;
+  min-height: 24px;
+  align-items: center;
+  padding: 2px 10px;
+  border-radius: 999px;
+  color: var(--text-brand);
+  background: var(--bg-brand-subtle);
+  font-size: 12px;
+}
+
+@media (max-width: 900px) {
+  .team-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .team-page {
+    padding: 40px 20px;
+  }
+
+  .team-heading {
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .team-copy h1 {
+    font-size: 32px;
+    line-height: 44px;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}

@@ -1,0 +1,28 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Team Logo">
+<rect width="96" height="96" rx="21" fill="url(#paint0_linear_0_5)"/>
+<circle id="glow" cx="48.5" cy="48.5" r="41.5" fill="url(#paint1_radial_0_5)"/>
+<path id="star" d="M78 21.75H75.75V19.5H73.5V17.25H75.75V15H78V17.25H80.25V19.5H78V21.75Z" fill="#C4B5FD"/>
+<path id="star_2" d="M77.2533 71.63H75.3767V69.7533H73.5V67.8767H75.3767V66H77.2533V67.8767H79.13V69.7533H77.2533V71.63Z" fill="#C4B5FD"/>
+<rect id="star-dot" x="56" y="24" width="2" height="2" fill="#C4B5FD"/>
+<rect id="star-dot_2" x="21" y="79" width="2" height="2" fill="#C4B5FD"/>
+<rect id="star-dot_3" x="79" y="45" width="2" height="2" fill="#C4B5FD"/>
+<g id="Reflua/Symbol">
+<g id="moon">
+<path d="M25.5 70.5V66.75V59.25H21.75V36.75H25.5V33H29.25V29.25H33V25.5H40.5V21.75H55.5V25.5H48V29.25H40.5V33H36.75V40.5H33V51.75H36.75V59.25H44.25V63H59.25V59.25H63V55.5H70.5V63H66.75V66.75H63V70.5H55.5V74.25H36.75V70.5H25.5Z" fill="#F5F3FF"/>
+<path d="M74.25 55.5H70.5V51.75H74.25V55.5Z" fill="#F5F3FF"/>
+<path d="M21.75 70.5H25.5V74.25H21.75V70.5Z" fill="#F5F3FF"/>
+</g>
+</g>
+</g>
+<defs>
+<linearGradient id="paint0_linear_0_5" x1="48" y1="0" x2="48" y2="96" gradientUnits="userSpaceOnUse">
+<stop stop-color="#1E1B2E"/>
+<stop offset="1" stop-color="#312E81"/>
+</linearGradient>
+<radialGradient id="paint1_radial_0_5" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(48.5 48.5) scale(41.5)">
+<stop stop-color="#A78BFA" stop-opacity="0.501961"/>
+<stop offset="1" stop-color="#A78BFA" stop-opacity="0"/>
+</radialGradient>
+</defs>
+</svg>
