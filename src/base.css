@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600&family=Press+Start+2P&display=swap');
+
+:root {
+  font-family: 'Noto Sans KR', sans-serif;
+  color: #111111;
+  background: #ffffff;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --bg-page: #ffffff;
+  --bg-subtle: #f9f9f9;
+  --bg-muted: #f3f3f3;
+  --bg-surface: #ffffff;
+  --bg-brand-subtle: #f8f6f9;
+  --text-primary: #111111;
+  --text-secondary: #525252;
+  --text-tertiary: #737373;
+  --text-brand: #60496f;
+  --border-default: #e5e5e5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+.site-shell {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  color: var(--text-primary);
+  background: var(--bg-page);
+  transition: color 180ms ease, background-color 180ms ease;
+}
+
+.site-shell[data-theme='dark'] {
+  color-scheme: dark;
+  --bg-page: #17151a;
+  --bg-subtle: #201d23;
+  --bg-muted: #343039;
+  --bg-surface: #242128;
+  --bg-brand-subtle: #342a3a;
+  --text-primary: #f7f4f8;
+  --text-secondary: #d0c9d4;
+  --text-tertiary: #a59ba9;
+  --text-brand: #d4b9e5;
+  --border-default: #3b3540;
+}
+
+.page-content {
+  flex: 1;
+}
