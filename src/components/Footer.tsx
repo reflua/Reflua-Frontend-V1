@@ -14,9 +14,7 @@ const columns = [
   {
     title: '프로젝트',
     links: [
-      { label: '봇 앱', href: null },
       { label: 'Reflua 웹', href: '/' },
-      { label: 'Reflua API', href: null },
     ],
   },
   {
@@ -48,17 +46,11 @@ export default function Footer() {
             {columns.map((column) => (
               <div className="footer-link-column" key={column.title}>
                 <h2>{column.title}</h2>
-                {column.links.map((link) =>
-                  link.href ? (
-                    <a href={link.href} key={link.label}>
-                      {link.label}
-                    </a>
-                  ) : (
-                    <span className="footer-link is-disabled" key={link.label} aria-disabled="true">
-                      {link.label} <span className="link-status">· 준비 중</span>
-                    </span>
-                  ),
-                )}
+                {column.links.map((link) => (
+                  <a href={link.href} key={link.label}>
+                    {link.label}
+                  </a>
+                ))}
               </div>
             ))}
           </div>
