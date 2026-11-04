@@ -8,9 +8,9 @@ type HeaderProps = {
 };
 
 const navigation = [
-  { label: '소개', href: '#about', active: true },
-  { label: '문서', href: '/docs', active: false },
-  { label: '팀원', href: '/team', active: false },
+  { label: '소개', href: '/', active: true },
+  { label: '문서', href: null, active: false },
+  { label: '팀원', href: null, active: false },
 ];
 
 export default function Header({ darkMode, onToggleTheme }: HeaderProps) {
@@ -23,16 +23,22 @@ export default function Header({ darkMode, onToggleTheme }: HeaderProps) {
         </a>
 
         <nav className="primary-nav" aria-label="주 메뉴">
-          {navigation.map(({ label, href, active }) => (
-            <a
-              className={`nav-link${active ? ' is-active' : ''}`}
-              href={href}
-              key={label}
-              aria-current={active ? 'page' : undefined}
-            >
-              {label}
-            </a>
-          ))}
+          {navigation.map(({ label, href, active }) =>
+            href ? (
+              <a
+                className={`nav-link${active ? ' is-active' : ''}`}
+                href={href}
+                key={label}
+                aria-current={active ? 'page' : undefined}
+              >
+                {label}
+              </a>
+            ) : (
+              <span className="nav-link is-disabled" key={label} aria-disabled="true">
+                {label}
+              </span>
+            ),
+          )}
         </nav>
 
         <div className="header-actions">
@@ -45,7 +51,13 @@ export default function Header({ darkMode, onToggleTheme }: HeaderProps) {
             onClick={onToggleTheme}
           >
             <span className="theme-knob">
-              <img src={sunIcon} width="16" height="16" alt="" />
+              {darkMode ? (
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M13.2 9.4A5.5 5.5 0 0 1 6.6 2.8 5.6 5.6 0 1 0 13.2 9.4Z" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              ) : (
+                <img src={sunIcon} width="16" height="16" alt="" />
+              )}
             </span>
           </button>
         </div>
