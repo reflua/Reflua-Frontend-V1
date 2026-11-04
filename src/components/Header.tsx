@@ -47,7 +47,7 @@ export default function Header({ darkMode, onToggleTheme }: HeaderProps) {
             type="button"
             role="switch"
             aria-checked={darkMode}
-            aria-label="다크 모드"
+            aria-label="다크 모드 사용"
             onClick={onToggleTheme}
           >
             <span className="theme-knob">
