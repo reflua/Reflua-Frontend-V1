@@ -17,8 +17,8 @@
 }
 
 .footer-brand-block {
-  width: 207px;
-  flex: 0 0 auto;
+  min-width: 0;
+  flex: 1 1 auto;
 }
 
 .brand-small {
@@ -65,13 +65,9 @@
   color: var(--text-secondary);
 }
 
-.footer-link.is-disabled {
-  color: var(--text-tertiary);
-  cursor: default;
-}
-
-.link-status {
-  font-size: 11px;
+.site-shell[data-theme='dark'] .footer-link-column h2,
+.site-shell[data-theme='dark'] .footer-link-column a {
+  color: #ffffff;
 }
 
 .footer-link-column a:hover,
@@ -112,6 +108,10 @@
   .footer-top {
     flex-direction: column;
     gap: 36px;
+  }
+
+  .footer-brand-block {
+    width: 100%;
   }
 
   .footer-link-columns {

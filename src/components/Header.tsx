@@ -4,27 +4,30 @@ import './header.css';
 
 type HeaderProps = {
   darkMode: boolean;
+  activePath: string;
   onToggleTheme: () => void;
 };
 
 const navigation = [
-  { label: '소개', href: '/', active: true },
-  { label: '문서', href: null, active: false },
-  { label: '팀원', href: null, active: false },
+  { label: '소개', href: '/' },
+  { label: '문서', href: '/docs' },
+  { label: '팀원', href: '/team' },
 ];
 
-export default function Header({ darkMode, onToggleTheme }: HeaderProps) {
+export default function Header({ darkMode, activePath, onToggleTheme }: HeaderProps) {
   return (
     <header className="site-header">
       <div className="header-inner">
         <a className="brand brand-large" href="/" aria-label="Reflua 홈">
-          <img src={moonMark} width="35" height="35" alt="" />
+          <img className={darkMode ? 'brand-mark is-dark' : 'brand-mark'} src={moonMark} width="35" height="35" alt="" />
           <span>Reflua</span>
         </a>
 
         <nav className="primary-nav" aria-label="주 메뉴">
-          {navigation.map(({ label, href, active }) =>
-            href ? (
+          {navigation.map(({ label, href }) => {
+            const active = activePath === href;
+
+            return (
               <a
                 className={`nav-link${active ? ' is-active' : ''}`}
                 href={href}
@@ -33,12 +36,8 @@ export default function Header({ darkMode, onToggleTheme }: HeaderProps) {
               >
                 {label}
               </a>
-            ) : (
-              <span className="nav-link is-disabled" key={label} aria-disabled="true">
-                {label}
-              </span>
-            ),
-          )}
+            );
+          })}
         </nav>
 
         <div className="header-actions">

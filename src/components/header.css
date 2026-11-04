@@ -37,6 +37,10 @@
   gap: 12px;
 }
 
+.brand-mark.is-dark {
+  filter: brightness(0) saturate(100%) invert(82%) sepia(74%) saturate(560%) hue-rotate(2deg) brightness(104%) contrast(102%);
+}
+
 .brand-large span {
   font-family: 'Press Start 2P', monospace;
   font-size: 20px;
@@ -73,11 +77,6 @@
   background: var(--bg-brand-subtle);
 }
 
-.nav-link.is-disabled {
-  color: var(--text-tertiary);
-  cursor: default;
-}
-
 .header-actions {
   display: flex;
   justify-content: flex-end;
@@ -103,7 +102,7 @@
   place-items: center;
   border-radius: 50%;
   background: var(--bg-surface);
-  transition: transform 180ms ease;
+  transition: transform 100ms ease-out;
 }
 
 .theme-knob svg {
