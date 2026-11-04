@@ -65,6 +65,15 @@
   color: var(--text-secondary);
 }
 
+.footer-link.is-disabled {
+  color: var(--text-tertiary);
+  cursor: default;
+}
+
+.link-status {
+  font-size: 11px;
+}
+
 .footer-link-column a:hover,
 .github-link:hover {
   color: var(--text-brand);
