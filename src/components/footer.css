@@ -17,8 +17,8 @@
 }
 
 .footer-brand-block {
-  width: 207px;
-  flex: 0 0 auto;
+  min-width: 0;
+  flex: 1 1 auto;
 }
 
 .brand-small {
@@ -112,6 +112,10 @@
   .footer-top {
     flex-direction: column;
     gap: 36px;
+  }
+
+  .footer-brand-block {
+    width: 100%;
   }
 
   .footer-link-columns {
