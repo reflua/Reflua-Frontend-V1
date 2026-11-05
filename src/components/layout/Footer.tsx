@@ -22,7 +22,8 @@ const columns = [
   },
 ];
 
-const githubLabel = env.githubUrl.replace(/^https?:\/\//, '');
+const githubProfileUrl = 'https://github.com/reflua';
+const githubLabel = githubProfileUrl.replace(/^https?:\/\//, '');
 
 function isExternal(href: string) {
   return /^(https?:|mailto:)/.test(href);
@@ -65,7 +66,7 @@ export default function Footer() {
 
         <div className="footer-bottom">
           <p>© {new Date().getFullYear()} Reflua. All rights reserved.</p>
-          <a className="github-link" href={env.githubUrl}>
+          <a className="github-link" href={githubProfileUrl}>
             <span className="github-icon" aria-hidden="true" />
             <span>{githubLabel}</span>
           </a>
