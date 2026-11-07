@@ -22,13 +22,13 @@
 .docs-card-heading { display: flex; align-items: center; gap: 10px; }
 .docs-card-heading h3 { margin: 0; color: var(--text-primary); font-size: 17px; letter-spacing: -.02em; }
 .docs-endpoint-route { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; margin-top: 10px; }
-.docs-method { display: inline-flex; min-width: 42px; justify-content: center; padding: 7px 12px; border-radius: 6px; font-size: 14px; font-weight: 600; line-height: 1.1; }
+.docs-method { display: inline-flex; min-width: 42px; justify-content: center; padding: 5px 7px; border-radius: 5px; font-size: 10px; font-weight: 700; line-height: 1.1; }
 .method-get { color: #70577e; background: #eee8f2; }
 .method-post { color: #fff; background: #765986; }
 .method-patch { color: #846015; background: #fbf1d5; }
 .method-delete { color: #a43c47; background: #fae7e8; }
 .method-ws { color: #70418a; background: #f1e7f7; }
-.docs-path { display: inline-block; min-width: 0; color: var(--text-primary); font: 20px ui-monospace, SFMono-Regular, Consolas, monospace; overflow-wrap: anywhere; }
+.docs-path { display: inline-block; min-width: 0; color: var(--text-primary); font: 12px ui-monospace, SFMono-Regular, Consolas, monospace; overflow-wrap: anywhere; }
 .docs-description { min-height: 42px; margin: 13px 0 0; font-size: 12px; }
 .docs-info-table-wrap { margin-top: 16px; overflow: hidden; border: 1px solid var(--border-default); border-radius: 10px; }
 .docs-info-table { width: 100%; border-collapse: collapse; color: var(--text-secondary); font-size: 12px; text-align: left; }
@@ -74,3 +74,4 @@
   .docs-tester-toolbar { align-items: flex-start; flex-direction: column; gap: 12px; }
   .docs-tester-heading { align-items: flex-start; flex-direction: column; gap: 4px; }
 }
+
