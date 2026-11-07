@@ -1,39 +1,49 @@
-# Reflua Frontend V1
+# Reflua Frontend
 
-Reflua 팀과 프로젝트를 소개하는 프론트엔드입니다. (React + TypeScript + Vite)
+Reflua 팀과 API 문서를 볼 수 있는 프론트엔드입니다. React, TypeScript, Vite로 만들었습니다.
 
-## Development
+## 실행하기
 
 ```bash
 npm install
 npm run dev
 ```
 
-## Environment variables
+배포용 파일은 `npm run build`로 만들고, 로컬에서 확인할 때는 `npm run preview`를 실행하면 됩니다.
 
-`.env`에 공개 가능한 설정값이 들어 있습니다. 로컬에서만 바꾸고 싶다면 `.env.local`을 만들어 덮어쓰세요 (git에 올라가지 않습니다).
+## 페이지
 
-| 변수 | 설명 |
+| 주소 | 내용 |
 | --- | --- |
-| `VITE_GITHUB_URL` | 푸터의 GitHub 주소 |
-| `VITE_GITHUB_ISSUES_URL` | 푸터의 Issues 주소 |
-| `VITE_CONTACT_EMAIL` | 푸터의 문의 메일 |
+| `/` | Reflua 소개 |
+| `/docs` | API 경로와 서버 확인 |
+| `/team` | 팀원 페이지 |
 
-> `VITE_` 접두사가 붙은 값은 빌드 결과물에 그대로 노출됩니다. 비밀 값은 넣지 마세요.
+API 문서에는 서버 확인용 `GET /` 요청을 보낼 수 있는 테스트 버튼이 있습니다. 다른 API는 명세 내용을 확인할 수 있도록 표시합니다.
 
-## Structure
+## 환경 변수
 
-```
+필요한 값은 `.env.local`에 적어두면 로컬 실행 때 사용할 수 있습니다.
+
+| 변수 | 용도 |
+| --- | --- |
+| `VITE_GITHUB_URL` | 푸터의 저장소 링크 |
+| `VITE_GITHUB_ISSUES_URL` | 푸터의 Issues 링크 |
+| `VITE_CONTACT_EMAIL` | 푸터의 문의 링크 |
+
+`VITE_`로 시작하는 값은 브라우저에 공개됩니다. API 키나 비밀번호 같은 비밀 값은 넣지 마세요.
+
+## 폴더 구성
+
+```text
 src/
-├─ assets/        icons/, logo/
-├─ components/    layout/ (Header, Footer + css)
-├─ config/        env.ts, navigation.ts
-├─ hooks/         useTheme.ts
-├─ lib/           router.tsx (가벼운 클라이언트 라우터)
-├─ pages/         HomePage, DocsPage, TeamPage
-└─ styles/        base.css (전역 스타일, 테마 변수)
+├─ assets/        로고와 아이콘
+├─ components/    공통 헤더와 푸터
+├─ config/        환경 변수와 메뉴 설정
+├─ hooks/         테마 상태
+├─ lib/           페이지 이동 처리
+├─ pages/         소개, API 문서, 팀원 페이지
+└─ styles/        공통 색상과 기본 스타일
 ```
 
-## Branch flow
-
-작업 브랜치에서 변경하고 `dev`로 모은 뒤, 릴리스할 내용을 `main`으로 전달합니다.
+작업 브랜치에서 변경한 뒤 `dev`에 모읍니다. 배포할 변경은 `dev`에서 `main`으로 전달합니다.
