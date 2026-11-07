@@ -107,6 +107,10 @@ export default function DocsPage() {
                   <div className="docs-card-heading"><h3>{endpoint.name}</h3><span className={`docs-method method-${endpoint.method.toLowerCase()}`}>{endpoint.method}</span></div>
                   <code className="docs-path">{endpoint.path}</code>
                   <p className="docs-description">{endpoint.description}</p>
+                  <p className="docs-endpoint-meta">
+                    <span>Headers {endpoint.headers ? '필요' : '불필요'}</span>
+                    <span>사용자 {endpoint.access}</span>
+                  </p>
                   {endpoint.testable ? (
                     <section className="docs-tester" aria-label={`${endpoint.name} API 테스트`}>
                       <div className="docs-tester-toolbar">
