@@ -107,13 +107,21 @@ export default function DocsPage() {
             <div className="docs-endpoints">
               {endpoints.filter((endpoint) => endpoint.group === group).map((endpoint) => (
                 <article className={`docs-endpoint-card${endpoint.testable ? ' is-testable' : ''}`} key={endpoint.id}>
-                  <div className="docs-card-heading"><h3>{endpoint.name}</h3><span className={`docs-method method-${endpoint.method.toLowerCase()}`}>{endpoint.method}</span></div>
-                  <code className="docs-path">{endpoint.path}</code>
+                  <div className="docs-card-heading"><h3>{endpoint.name}</h3></div>
+                  <div className="docs-endpoint-route">
+                    <span className={`docs-method method-${endpoint.method.toLowerCase()}`}>{endpoint.method}</span>
+                    <code className="docs-path">{endpoint.path}</code>
+                  </div>
                   <p className="docs-description">{endpoint.description}</p>
-                  <p className="docs-endpoint-meta">
-                    <span>Headers {endpoint.headers ? '필요' : '불필요'}</span>
-                    <span>사용자 {endpoint.access}</span>
-                  </p>
+                  <div className="docs-info-table-wrap">
+                    <table className="docs-info-table">
+                      <thead><tr><th>항목</th><th>값</th><th>설명</th></tr></thead>
+                      <tbody>
+                        <tr><td>Headers</td><td>{endpoint.headers ? '필요' : '불필요'}</td><td>요청 헤더 포함 여부</td></tr>
+                        <tr><td>사용자</td><td>{endpoint.access}</td><td>API 사용 가능 범위</td></tr>
+                      </tbody>
+                    </table>
+                  </div>
                   {endpoint.testable ? (
                     <section className="docs-tester" aria-label={`${endpoint.name} API 테스트`}>
                       <div className="docs-tester-toolbar">
