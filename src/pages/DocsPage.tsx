@@ -60,11 +60,14 @@ export default function DocsPage() {
       const rawBody = await response.text();
       let body = rawBody || '(응답 본문 없음)';
       try { body = JSON.stringify(JSON.parse(rawBody), null, 2); } catch { /* Keep plain text responses readable. */ }
+      if (!response.ok) body = `HTTP ${response.status} 응답이에요.\n\n${body}`;
       setResult({ status: response.status, duration: Math.round(performance.now() - startedAt), body, error: !response.ok });
     } catch (requestError) {
       const message = requestError instanceof Error && requestError.name === 'TimeoutError'
-        ? '요청 시간이 초과됐어요. 서버 주소와 상태를 확인해주세요.'
-        : '서버에 연결할 수 없어요. API 서버 상태와 브라우저 요청 허용 설정을 확인해주세요.';
+        ? '15초 동안 응답이 없어 요청 시간이 초과됐어요. 서버 상태와 네트워크 연결을 확인해주세요.'
+        : requestError instanceof TypeError
+          ? '서버에 연결하지 못했어요. 서버 주소, 네트워크 연결, CORS 허용 설정을 확인해주세요.'
+          : '요청을 처리하지 못했어요. 잠시 후 다시 시도해주세요.';
       setResult({ body: message, error: true });
     } finally {
       setLoading(false);
