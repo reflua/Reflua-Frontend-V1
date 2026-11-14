@@ -1,0 +1,167 @@
+.team-page {
+  padding: 56px 24px 96px;
+}
+
+.team-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.team-intro {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.team-logo {
+  display: grid;
+  place-items: center;
+  width: 72px;
+  height: 72px;
+  flex-shrink: 0;
+  border-radius: 16px;
+  background: linear-gradient(145deg, #3a2c57 0%, #231a36 100%);
+}
+
+.team-logo-mark {
+  width: 44px;
+  height: 44px;
+  background-color: #d4b9e5;
+  -webkit-mask: url('../assets/logo/reflua-mark.svg') center / contain no-repeat;
+  mask: url('../assets/logo/reflua-mark.svg') center / contain no-repeat;
+}
+
+.team-intro-text h1 {
+  margin: 8px 0 0;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.team-intro-text p {
+  margin: 8px 0 0;
+  color: var(--text-secondary);
+  font-size: 15px;
+}
+
+.team-eyebrow {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--bg-brand-subtle);
+  color: var(--text-brand);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin: 40px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.team-card {
+  padding: 20px;
+  border: 1px solid var(--border-default);
+  border-radius: 12px;
+  background: var(--bg-surface);
+}
+
+.team-avatar {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  overflow: hidden;
+  border-radius: 50%;
+  background: var(--bg-brand-subtle);
+  color: var(--text-brand);
+}
+
+.team-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.team-person-icon {
+  width: 22px;
+  height: 22px;
+}
+
+.team-name {
+  margin: 16px 0 0;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.team-name a:hover {
+  text-decoration: underline;
+}
+
+.team-github {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 8px 0 0;
+  color: var(--text-secondary);
+  font-family: ui-monospace, 'SFMono-Regular', Consolas, monospace;
+  font-size: 13px;
+}
+
+.team-github-icon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  background-color: currentColor;
+  -webkit-mask: url('../assets/icons/github.svg') center / contain no-repeat;
+  mask: url('../assets/icons/github.svg') center / contain no-repeat;
+}
+
+.team-roles {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.team-roles-label {
+  margin-right: 2px;
+  color: var(--text-tertiary);
+  font-size: 11px;
+}
+
+.team-role {
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--bg-brand-subtle);
+  color: var(--text-brand);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+@media (max-width: 960px) {
+  .team-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .team-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .team-intro-text h1 {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 440px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+}
