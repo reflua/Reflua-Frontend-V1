@@ -7,38 +7,14 @@
   margin: 0 auto;
 }
 
-.team-intro {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.team-logo {
-  display: grid;
-  place-items: center;
-  width: 72px;
-  height: 72px;
-  flex-shrink: 0;
-  border-radius: 16px;
-  background: linear-gradient(145deg, #3a2c57 0%, #231a36 100%);
-}
-
-.team-logo-mark {
-  width: 44px;
-  height: 44px;
-  background-color: #d4b9e5;
-  -webkit-mask: url('../assets/logo/reflua-mark.svg') center / contain no-repeat;
-  mask: url('../assets/logo/reflua-mark.svg') center / contain no-repeat;
-}
-
-.team-intro-text h1 {
+.team-intro h1 {
   margin: 8px 0 0;
   font-size: 40px;
   font-weight: 700;
   line-height: 1.2;
 }
 
-.team-intro-text p {
+.team-intro p {
   margin: 8px 0 0;
   color: var(--text-secondary);
   font-size: 15px;
@@ -98,18 +74,22 @@
   font-weight: 700;
 }
 
-.team-name a:hover {
-  text-decoration: underline;
+.team-github {
+  margin: 8px 0 0;
 }
 
-.team-github {
-  display: flex;
+.team-github-link {
+  display: inline-flex;
   align-items: center;
   gap: 6px;
-  margin: 8px 0 0;
   color: var(--text-secondary);
   font-family: ui-monospace, 'SFMono-Regular', Consolas, monospace;
   font-size: 13px;
+}
+
+.team-github-link:hover {
+  color: var(--text-brand);
+  text-decoration: underline;
 }
 
 .team-github-icon {
@@ -155,7 +135,7 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .team-intro-text h1 {
+  .team-intro h1 {
     font-size: 32px;
   }
 }
@@ -164,4 +144,4 @@
   .team-grid {
     grid-template-columns: 1fr;
   }
-}
+}git status
