@@ -1,30 +1,27 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import './team-page.css';
 
 type Member = {
+  name: string;
   github: string;
   roles: string[];
 };
 
-type GithubUser = {
-  name: string | null;
-};
-
 const members: Member[] = [
-  { github: 'jiwoo1222', roles: ['Frontend', 'Design'] },
-  { github: 'aranchini', roles: ['Frontend'] },
-  { github: 'gyungud4', roles: ['Frontend'] },
-  { github: 'hyeinggu', roles: ['Design'] },
-  { github: 'minjun0317', roles: ['Design'] },
-  { github: 'soyuo', roles: ['Backend', 'Application'] },
-  { github: 'wjsxodid-BE', roles: ['Backend'] },
-  { github: 's26047-code', roles: ['Backend'] },
-  { github: 'jigumeong012-byte', roles: ['Backend'] },
-  { github: 'mmHg-9060', roles: ['Backend'] },
-  { github: 'ci667702-star', roles: ['DevOps'] },
-  { github: 'RGB327', roles: ['DevOps'] },
-  { github: 'dltldn1234', roles: ['Application', 'HP'] },
-  { github: 'cnsvkf', roles: ['Application'] },
+  { name: '양지우', github: 'jiwoo1222', roles: ['Frontend', 'Design'] },
+  { name: '서아란', github: 'aranchini', roles: ['Frontend'] },
+  { name: '선가영', github: 'gyungud4', roles: ['Frontend'] },
+  { name: '추혜인', github: 'hyeinggu', roles: ['Design'] },
+  { name: '김민준', github: 'minjun0317', roles: ['Design'] },
+  { name: '정인성', github: 'soyuo', roles: ['Backend', 'Application'] },
+  { name: '전태양', github: 'wjsxodid-BE', roles: ['Backend'] },
+  { name: '이다원', github: 's26047-code', roles: ['Backend'] },
+  { name: '박정혁', github: 'jigumeong012-byte', roles: ['Backend'] },
+  { name: '조현', github: 'mmHg-9060', roles: ['Backend'] },
+  { name: '이채율', github: 'ci667702-star', roles: ['DevOps'] },
+  { name: '엄민용', github: 'RGB327', roles: ['DevOps'] },
+  { name: '이시우', github: 'dltldn1234', roles: ['Application', 'HP'] },
+  { name: '박지성', github: 'cnsvkf', roles: ['Application'] },
 ];
 
 export default function TeamPage() {
@@ -32,15 +29,9 @@ export default function TeamPage() {
     <main className="page-content team-page" aria-label="팀원 페이지">
       <div className="team-content">
         <header className="team-intro">
-          <span className="team-logo" role="img" aria-label="Reflua 로고">
-            <span className="team-logo-mark" />
-          </span>
-
-          <div className="team-intro-text">
-            <span className="team-eyebrow">팀원 소개</span>
-            <h1>Reflua</h1>
-            <p>함께 Reflua를 만들어 가는 팀원들을 소개해요.</p>
-          </div>
+          <span className="team-eyebrow">팀원 소개</span>
+          <h1>Reflua</h1>
+          <p>함께 Reflua를 만들어 가는 팀원들을 소개해요.</p>
         </header>
 
         <ul className="team-grid">
@@ -55,29 +46,7 @@ export default function TeamPage() {
 
 function MemberCard({ member }: { member: Member }) {
   const [imageFailed, setImageFailed] = useState(false);
-  const [displayName, setDisplayName] = useState<string | null>(null);
   const profileUrl = `https://github.com/${member.github}`;
-
-  useEffect(() => {
-    const controller = new AbortController();
-
-    async function loadDisplayName() {
-      try {
-        const response = await fetch(`https://api.github.com/users/${member.github}`, {
-          signal: controller.signal,
-        });
-        if (!response.ok) return;
-
-        const user: GithubUser = await response.json();
-        if (user.name) setDisplayName(user.name);
-      } catch {
-        return;
-      }
-    }
-
-    void loadDisplayName();
-    return () => controller.abort();
-  }, [member.github]);
 
   return (
     <li className="team-card">
@@ -87,21 +56,25 @@ function MemberCard({ member }: { member: Member }) {
         ) : (
           <img
             src={`${profileUrl}.png?size=160`}
-            alt={`${member.github} 프로필 사진`}
+            alt={`${member.name} 프로필 사진`}
             onError={() => setImageFailed(true)}
           />
         )}
       </div>
 
-      <h2 className="team-name">
-        <a href={profileUrl} target="_blank" rel="noreferrer">
-          {displayName ?? member.github}
-        </a>
-      </h2>
+      <h2 className="team-name">{member.name}</h2>
 
       <p className="team-github">
-        <span className="team-github-icon" aria-hidden="true" />
-        {member.github}
+        <a
+          className="team-github-link"
+          href={profileUrl}
+          target="_blank"
+          rel="noreferrer"
+          aria-label={`${member.name} GitHub 프로필 열기`}
+        >
+          <span className="team-github-icon" aria-hidden="true" />
+          {member.github}
+        </a>
       </p>
 
       <div className="team-roles">
